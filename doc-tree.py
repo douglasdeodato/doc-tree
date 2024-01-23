@@ -17,7 +17,7 @@ def find_word_occurrences(text, keywords):
     return occurrences
 
 def create_flowchart(links_data, target_word):
-    dot = Digraph(comment='Word Occurrences Flowchart', format='png', engine='dot')
+    dot = Digraph(comment='Word Occurrences Flowchart', format='png', engine='dot', graph_attr={'rankdir': 'LR'})
 
     for link, occurrences in links_data.items():
         node_label = f"{link}\nOccurrences: {', '.join(f'{key}: {count}' for key, count in occurrences.items())}"
